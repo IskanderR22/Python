@@ -1,3 +1,4 @@
+
 for i in range(0, 151):
     print(i)
     
@@ -13,20 +14,23 @@ for i in range(1, 101):
     elif i % 5 == 0:
         print("Coding")
         
-'''
+
+sumOfOdds = 0
+    
 for i in range(0, 500001):
-    sumOfOdds = 0
     if i % 2 != 0:
-        sumOfOdds = sumOfOdds + i
-        
+        sumOfOdds += i
+
 print(sumOfOdds)
-        
 
-for i in range(2018, 0): #Print positive numbers counting down by four
-    
-    
 
-lowNum
-highNum
-multi
-'''
+for i in range(2018, 0, -4): 
+    print(i)    
+
+low_num = 2
+high_num = 10
+mult = 2
+
+for i in range(low_num, high_num):          
+    if i % mult == 0:
+        print(i)
