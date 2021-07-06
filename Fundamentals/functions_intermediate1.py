@@ -27,7 +27,7 @@ print(sports_directory)
 
 #4 Change the value 20 in z to 30
 
-z[0][y] = 30
+z[0]['y'] = 30
 print(z)
 
 
@@ -68,10 +68,12 @@ iterateDictionary2('last_name',students)
 # Create a function printInfo(some_dict) that given a dictionary whose values are all lists, 
 # prints the name of each key along with the size of its list, and then prints the associated values within each key's list. 
 # For example:
+
 dojo = {
 'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
 'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
 }
+
 # printInfo(dojo)
 # # output:
 # 7 LOCATIONS
@@ -81,8 +83,7 @@ dojo = {
 # Chicago
 # Tulsa
 # DC
-# Burbank
-    
+# Burbank  
 # 8 INSTRUCTORS
 # Michael
 # Amy
