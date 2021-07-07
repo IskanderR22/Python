@@ -1,5 +1,21 @@
+class User:
+    def __init__(self, name, email,):
 
+        self.name = name
+        self.email = email
+        self.account = BankAccount(amount = 0, interest = 0.2) # self.whatever you can name this whatever and link the BankAccount class
+    
+    def make_deposit(self, deposit):
+        self.account.deposit(deposit)
+        return self
+    
+    def make_withdrawl(self, withdrawl):
+        self.account.withdraw(withdrawl)
+        return self
 
+    def display_balance(self):
+        self.account.display_amount()
+        return self
 
 
 class BankAccount:
@@ -7,7 +23,7 @@ class BankAccount:
     def __init__(self, amount, interest):
         self.amount = amount
         self.interest = interest 
-        .bank_instanceBankAccounts.append(self)
+        BankAccount.bank_instances.append(self)
 
     def deposit(self, deposit):
         self.amount = self.amount + deposit
@@ -32,21 +48,16 @@ class BankAccount:
         else:
             print("No funds in account, please deposit")
         return self
+        
     @classmethod
     def print_all_instances(cls):
         for bank in cls.bank_instances:
             bank.display_amount()
 
 
-account1 = BankAccount(100, 0.2)
-account2 = BankAccount(100, 0.1)
+micheal = User("Micheal", "micheal@gmail.com")
+harry = User("Harry", "harry@gmail.com")
+josh = User("Josh", "josh@gmail.com")
 
-account1.deposit(500)
-account1.display_amount()
-account1.deposit(100).deposit(100).deposit(100).withdraw(200).yield_interest()
-account1.display_amount()
+micheal.make_deposit(100).make_deposit(100).make_withdrawl(100).display_balance()
 
-account2.deposit(100).deposit(100).withdraw(100).withdraw(100).withdraw(100).withdraw(100).yield_interest()
-account2.display_amount()
-
-BankAccount.print_all_instances()
