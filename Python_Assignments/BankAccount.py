@@ -1,13 +1,11 @@
 
 
-
-
 class BankAccount:
     bank_instances = []
     def __init__(self, amount, interest):
         self.amount = amount
         self.interest = interest 
-        .bank_instanceBankAccounts.append(self)
+        BankAccount.bank_instances.append(self) # Store the class within the container 
 
     def deposit(self, deposit):
         self.amount = self.amount + deposit
@@ -40,6 +38,8 @@ class BankAccount:
 
 account1 = BankAccount(100, 0.2)
 account2 = BankAccount(100, 0.1)
+account3 = BankAccount(100, 0.2)
+account4 = BankAccount(100, 0.1)
 
 account1.deposit(500)
 account1.display_amount()
