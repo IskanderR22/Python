@@ -7,19 +7,20 @@ class Ninja:
         self.last_name = last_name
         self.treats = treats
         self.pet_food = pet_food
-        self.pet = pet
-        self.choose_pet = Pet()
+        self.pet = pet # We inserted the Pet class attributes and methods inside this variable
     
     def walk(self):
-        self.choose_pet.play()
+        self.pet.play() # We are accessing the method inside of Pet
         return self
     
+
     def feed(self):
-        self.choose_pet.eat()
+        self.pet.eat() # We are accessing the method inside of Pet
         return self
 
+
     def bathe(self):
-        self.choose_pet.noise()
+        self.pet.noise() # We are accessing the method inside of Pet
         return self
 
 
@@ -36,22 +37,30 @@ class Pet:
         self.health = self.health + 25
         return self
 
+
     def eat(self):
         self.energy = self.energy + 5
         self.health = self.health + 25
+        print(f"Pet's health after it is fed: {self.health}")
+        print(f"Pet's energy after it is fed: {self.energy}")
         return self
+
 
     def play(self):
         self.health = self.health + 5
+        print(f"Pet's health after a walk: {self.health}")
         return self 
 
+
     def noise(self):
-        print("Meow!")
+        print("Your pet says: Meow!")
         return self
 
 
 
 
-ninja = Ninja()
+ninja = Ninja("Iskander", "Rangel", "Cat nip", "Cat food", Pet("Zelda", "Cat", "Sit")) # We can use a object/class as a parameter for another class. 
+                                                                                        # This will store all the attributes and methods from Pet in the pet parameter.
+                                                                                        
 
-pet = Pet()
+ninja.feed().walk().bathe()
