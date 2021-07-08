@@ -1,3 +1,5 @@
+
+
 class Pokemon:
 
     def __init__( self , name ):
@@ -14,4 +16,5 @@ class Pokemon:
     def attack ( self , Pokemon ):
         Pokemon.health -= self.strength
         return self
+
 
