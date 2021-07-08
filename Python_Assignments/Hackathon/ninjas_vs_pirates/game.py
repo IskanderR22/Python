@@ -22,17 +22,16 @@ import random
 #     poke3 = Pokemon("Lizardon")
 
 
-poke1 = Pikachu("Mousy")
+poke1 = Pikachu("Mousy") # Setting an object with the class attribute
 
-poke2 = Squirtle("Donatelo")
+poke2 = Squirtle("Donatelo") # Setting an object with the class attribute
 
-poke3 = Charmander("Lizardon")
+poke3 = Charmander("Lizardon") # Setting an object with the class attribute
 
-poke1.show_stats()
+poke1.show_stats() # Calling on a method withing the class
 
-poke1.attack(poke2)
-poke2.show_stats()
+poke1.attack(poke2) # Calling on a method withing the class
+poke2.show_stats() # Calling on a method withing the class
 
-poke2.attack(poke3)
-poke3.show_stats()
-
+poke2.attack(poke3) # Calling on a method withing the class
+poke3.show_stats() # Calling on a method withing the class
