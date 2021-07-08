@@ -7,6 +7,6 @@ import Parent # We are importing the Parent.py file
 
 
 
-print(locals())
+# print(locals())
 
-# print(__name__)
+print(__name__)
