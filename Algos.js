@@ -162,6 +162,6 @@ function parensValid(str1) {
 }
 
 
-var test = parensValid(str2);
+var test = parensValid(str1);
 
 console.log(test);

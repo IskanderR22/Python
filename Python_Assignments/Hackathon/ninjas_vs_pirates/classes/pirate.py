@@ -1,0 +1,17 @@
+class Pokemon:
+
+    def __init__( self , name ):
+        self.name = name
+        self.strength = 10
+        self.speed = 10
+        self.health = 100
+        self.type ="normal"
+
+    def show_stats( self ):
+        print(f"Name: {self.name}\nStrength: {self.strength}\nSpeed: {self.speed}\nHealth: {self.health}\n Type:{self.type}")
+        return self
+
+    def attack ( self , Pokemon ):
+        Pokemon.health -= self.strength
+        return self
+
