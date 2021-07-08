@@ -71,69 +71,25 @@
 Parens Valid
 	Given an str that has parenthesis in it
 	return whether the parenthesis are valid
-*/
-
-const str1 = "Y(3(p)p(3)r)s";
-const expected1 = true;
-
-const str2 = "N(0(p)3";
-const expected2 = false;
-// Explanation: not every parenthesis is closed.
-
-const str3 = "N(0)t ) 0(k";
-const expected3 = false;
-// Explanation: because the underlined ")" is premature: there is nothing open for it to close.
-
-const str4 = "a(b))(c";
-const expected4 = false;
-// Explanation: same number of opens and closes but the 2nd closing closes nothing
-
-function parensValid(str) {
-    var count = 0;
-    for( var i = 0; i < str.length; i++){
-        if(str[i] == "("){
-            count++;
-        }
-        else if (str[i] == ")"){
-            count--;
-        }
-        if(count < 0){
-            return false;
-        }
-    if( count == 0){
-        return true;
-    }
-    else{
-        return false;
-    }
-        
-    }
-}
-
-var newString = parensValid(str2)
-console.log(newString);
-
-
-/*****************************************************************************/
-
-// /* 
-// Braces Valid
-// Given a string sequence of parentheses, braces and brackets, determine whether it is valid. 
 // */
 
-// const str1 = "W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!";
+// const str1 = "Y(3(p)p(3)r)s";
 // const expected1 = true;
 
-// const str2 = "D(i{a}l[ t]o)n{e";
+// const str2 = "N(0(p)3";
 // const expected2 = false;
+// // Explanation: not every parenthesis is closed.
 
-// const str3 = "A(1)s[O (n]0{t) 0}k";
+// const str3 = "N(0)t ) 0(k";
 // const expected3 = false;
+// // Explanation: because the underlined ")" is premature: there is nothing open for it to close.
 
-// function bracesValid(str) {
+// const str4 = "a(b))(c";
+// const expected4 = false;
+// // Explanation: same number of opens and closes but the 2nd closing closes nothing
+
+// function parensValid(str) {
 //     var count = 0;
-//     var squareCount = 0;
-//     var curlyCount = 0;
 //     for( var i = 0; i < str.length; i++){
 //         if(str[i] == "("){
 //             count++;
@@ -141,41 +97,71 @@ console.log(newString);
 //         else if (str[i] == ")"){
 //             count--;
 //         }
-        
-//         if (str[i] == "{"){
-//             curlyCount++;
-//         }
-//         else if(str[i] == "}"){
-//             curlyCount--;
-//         }
-//         if (str[i] == "["){
-//             squareCount++;
-//         }
-//         else if(str[i] == "]"){
-//             squareCount--;
-//         }
-//         if( count < 0){
-//             return false
-//         }
-//         else if ( curlyCount < 0){
+
+//         if(count < 0){
 //             return false;
 //         }
-//         else if( squareCount < 0){
-//             return false;
-//         }
-//         if( count == 0 && squareCount == 0 && curlyCount == 0){
-//             return true;
-//         }
-//         else{
-//             return false;
-            
-//         }
-        
+//     }
+//     if(count == 0){
+//         return true;
+//     }
+//     else{
+//         return false;
 //     }
 // }
 
-// var test = bracesValid(str1)
-// console.log(test)
+// var newString = parensValid(str3)
+// console.log(newString);
 
-// var test2 = bracesValid(str2)
-// console.log(test2)
+
+/*****************************************************************************/
+
+/* 
+Braces Valid
+Given a string sequence of parentheses, braces and brackets, determine whether it is valid. 
+*/
+
+const str1 = "W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!";
+const expected1 = true;
+
+const str2 = "D(i{a}l[ t]o)n{e";
+const expected2 = false;
+
+const str3 = "A(1)s[O (n]0{t) 0}k";
+const expected3 = false;
+
+function parensValid(str1) {
+    testArray = []
+    for(i = 0; i < str.length-1; i++){   
+        if (str[i]=="(" || str[i]=="{" || str[i]=="["){;
+            testArray.push(str[i]);
+        } 
+        else if(str[i]==")"){
+        if(testArray.length==0)return false;
+        else if(testArray[testArray.length-2]=="("){
+            testArray.pop();
+        }
+        }
+        else if(str[i]=="}"){
+        if(testArray.length==0)return false;
+        else if(testArray[testArray.length-2]=="{"){
+                testArray.pop();
+        }
+        }        
+        else if(str[i]=="]"){
+        if(testArray.length==0)return false;
+        else if(testArray[testArray.length-2]=="["){
+                testArray.pop();
+        }
+    }
+}
+    if(testArray.length==0){
+        return true;
+    }
+    else return false;
+}
+
+
+var test = parensValid(str2);
+
+console.log(test);
