@@ -8,6 +8,22 @@ from classes.pirate import Pokemon # Grabbing from the classes folder, selecting
 import random
 
 
+poke1 = Pikachu("Mousy") # Setting an object with the class attribute
+
+poke2 = Squirtle("Donatelo") # Setting an object with the class attribute
+
+poke3 = Charmander("Lizardon") # Setting an object with the class attribute
+
+poke1.show_stats() # Calling on a method withing the class
+
+poke1.attack(poke2).attack(poke2).attack(poke2) # Calling on a method withing the class/ This fight will kill Squirtle
+poke2.show_stats() # Calling on a method withing the class
+
+poke2.attack(poke3) # Calling on a method withing the class
+poke3.show_stats() # Calling on a method withing the class
+
+
+# Setting an input for the user 
 # trainer1 = input("What starter would you like to pick\n 1. Pikachu\m 2. Squirtle\n 3. Charmander")
 
 # if trainer1 == 1:
@@ -20,18 +36,3 @@ import random
 #     poke2 = Squirtle("Donatelo")
 # elif trainer1 == 3:
 #     poke3 = Pokemon("Lizardon")
-
-
-poke1 = Pikachu("Mousy") # Setting an object with the class attribute
-
-poke2 = Squirtle("Donatelo") # Setting an object with the class attribute
-
-poke3 = Charmander("Lizardon") # Setting an object with the class attribute
-
-poke1.show_stats() # Calling on a method withing the class
-
-poke1.attack(poke2) # Calling on a method withing the class
-poke2.show_stats() # Calling on a method withing the class
-
-poke2.attack(poke3) # Calling on a method withing the class
-poke3.show_stats() # Calling on a method withing the class
