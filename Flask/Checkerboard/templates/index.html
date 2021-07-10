@@ -33,7 +33,7 @@
     <div class= "container">
         <div class="boardContainer">
             <table>
-                {%for row in range((x/2)|int)%}
+                {%for row in range(x//2)%}
                 <tr>
                     {% for col in range(y)%}
                     <td class="spots" {%if col % 2 == 0 %} style="background-color:{{color1}};" {% else %} style="background-color:{{color2}}" {%endif%}></td>
