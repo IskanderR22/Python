@@ -1,0 +1,9 @@
+#form{
+    border: solid 2px black;
+    text-align: center;
+    padding: 50px 0px;
+}
+
+#comm{
+    width: 550px; height: 130px;
+}

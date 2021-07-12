@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>Dojo Survey</title>
+</head>
+<body>
+<div class="container">
+    <form action="/process" method="post" id="form">
+        <p>
+        Your Name:
+        <input type="text" name="name" id="">
+        <!-- the name attribute defines the key in request.form -->
+        </p>
+        <p>
+        Dojo Location:
+        <select  name="locations" id="locations">
+            <option value="LA">LA</option>
+            <option value="Chicago">Chicago</option>
+            <option value="San Fansisco">San Fansisco</option>
+            <option value="Philidelphia">Philidelphia</option>
+        </select>
+        </p>
+        <p>
+        Favorite Language:
+        <select name="language" id="language">
+            <option value="HTML">HTML</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="CSS">CSS</option>
+            <option value="Python">Python</option>
+            </select>
+        </p>
+        <p>Comments (Optional):</p>
+        <p><textarea name="comments_optional" id="comm"  cols = "30" rows = "10"> </textarea></p>
+        <!-- <input type="submit" value="Submit"> -->
+        <button>submit</button>
+    </form>
+</div>
+</body>
+</html>
