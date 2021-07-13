@@ -4,14 +4,14 @@ from flask import Flask, render_template, request, redirect, session
 app = Flask(__name__)
 app.secret_key = "keep it secret, keep it safe."
 
-# what is the default request method when declaring a route?
-# GET Request
+
+# The default request method is a GET Request
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
-# we need to specify that this route is for a post request
+# This will be the POST method route
 @app.route("/process", methods = ["POST"])
 def dojo_Survey():
     print(request.form) 
@@ -22,9 +22,6 @@ def dojo_Survey():
     session['locations'] =request.form['locations']
     session['language'] =request.form['language']
     session['comments_optional'] =request.form['comments_optional'] 
-
-
-
     return redirect("/result") # redirect makes a new GET request to a different route
 
 
