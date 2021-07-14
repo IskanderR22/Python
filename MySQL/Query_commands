@@ -6,7 +6,7 @@
 
 
 -- CRUD: Create, Read, Update, Delete
-
+SET SQL_SAFE_UPDATES = 0;
 
 -- Create
 -- SQL command is: INSERT
