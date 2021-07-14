@@ -1,36 +1,36 @@
 
 
-// /* 
-//     Acronyms
-//     Create a function that, given a string, returns the string’s acronym 
-//     (first letter of each word capitalized). 
-//     Do it with .split first if you need to, then try to do it without
-// */
+/* 
+    Acronyms
+    Create a function that, given a string, returns the string’s acronym 
+    (first letter of each word capitalized). 
+    Do it with .split first if you need to, then try to do it without
+*/
 
-// const str1 = " there's no free lunch - gotta pay yer way. ";
-// const expected1 = "TNFL-GPYW";
+const str1 = " there's no free lunch - gotta pay yer way. ";
+const expected1 = "TNFL-GPYW";
 
-// const str2 = "Live from New York, it's Saturday Night!";
-// const expected2 = "LFNYISN";
+const str2 = "Live from New York, it's Saturday Night!";
+const expected2 = "LFNYISN";
 
-// function acronymize(str) {
+function acronymize(str) {
 
-//     // SETUP
-// 	var wordsArr = str.split(" ") // Splits the original string into an array ["there's", "no", "free", "lunch"] etc
-// 	var arr = []  // Create a variable to hold the new list of new letters
+    // SETUP
+	var wordsArr = str.split(" ") // Splits the original string into an array ["there's", "no", "free", "lunch"] etc
+	var arr = []  // Create a variable to hold the new list of new letters
 
-//     // WORK
-// 	for( var i = 0; i < wordsArr.length; i++){ // Go through the new array  ^^^ [0, 1, 2, 3,]
-// 		var acr = wordsArr[i].split('') // Create a new varible to hold splitting the words
-//                                         // Split each word into letters, ["t", "h", "e", "r", "e",',"s",] -> [0, 1, 2, 3, 4, 5, 6, 7]
-// 		arr.push(acr[0]) // Push the index of 0 at this new array into our first arr variable 
-// 	}
-//     // RETURN OR PRINT
-// 	console.log(arr.join('').toUpperCase()) // This will remove the spaces between the varibles and uppercase the letters 
-//                                             // And making it a string 
-// } 
+    // WORK
+	for( var i = 0; i < wordsArr.length; i++){ // Go through the new array  ^^^ [0, 1, 2, 3,]
+		var acr = wordsArr[i].split('') // Create a new varible to hold splitting the words
+                                        // Split each word into letters, ["t", "h", "e", "r", "e",',"s",] -> [0, 1, 2, 3, 4, 5, 6, 7]
+		arr.push(acr[0]) // Push the index of 0 at this new array into our first arr variable 
+	}
+    // RETURN OR PRINT
+	console.log(arr.join('').toUpperCase()) // This will remove the spaces between the varibles and uppercase the letters 
+                                            // And making it a string 
+} 
 
-// acronymize(str1)
+acronymize(str1)
 
 
 // /* 
@@ -39,28 +39,28 @@
 //     return a new string that is the given string reversed
 // */
 
-// const str1 = "creature";
-// const expected1 = "erutaerc";
+const str1 = "creature";
+const expected1 = "erutaerc";
 
-// const str2 = "dog";
-// const expected2 = "god";
+const str2 = "dog";
+const expected2 = "god";
 
-// function reverseString(str) {
-//     // SETUP
-// 	var reversed = " "
+function reverseString(str) {
+    // SETUP    
+	var reversed = " "
 
-//     //WORK
-// 	for( var i = str.length - 1 ; i >= 0; i-- ){ // This will start i at the end of the string value 2, 1, 0 so for dog, g, o, d
-// 		reversed += str[i] // This will add the index value at i to our new variable
-// 	}
+    //WORK
+	for( var i = str.length - 1 ; i >= 0; i-- ){ // This will start i at the end of the string value 2, 1, 0 so for dog, g, o, d
+		reversed += str[i] // This will add the index value at i to our new variable
+	}
 
-//     //RETURN
-// 	return reversed; // This returns our new string to our function 
-// }
+    //RETURN
+	return reversed; // This returns our new string to our function 
+}
 
-// reverseString(str1)
-// reverseString(str2)
-// console.log(reverseString(str2)) // This will print the return value of the function with the argument sent.
+reverseString(str1)
+reverseString(str2)
+console.log(reverseString(str2)) // This will print the return value of the function with the argument sent.
 
 
 
@@ -73,45 +73,45 @@ Parens Valid
 	return whether the parenthesis are valid
 // */
 
-// const str1 = "Y(3(p)p(3)r)s";
-// const expected1 = true;
+const str1 = "Y(3(p)p(3)r)s";
+const expected1 = true;
 
-// const str2 = "N(0(p)3";
-// const expected2 = false;
-// // Explanation: not every parenthesis is closed.
+const str2 = "N(0(p)3";
+const expected2 = false;
+// Explanation: not every parenthesis is closed.
 
-// const str3 = "N(0)t ) 0(k";
-// const expected3 = false;
-// // Explanation: because the underlined ")" is premature: there is nothing open for it to close.
+const str3 = "N(0)t ) 0(k";
+const expected3 = false;
+// Explanation: because the underlined ")" is premature: there is nothing open for it to close.
 
-// const str4 = "a(b))(c";
-// const expected4 = false;
-// // Explanation: same number of opens and closes but the 2nd closing closes nothing
+const str4 = "a(b))(c";
+const expected4 = false;
+// Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-// function parensValid(str) {
-//     var count = 0;
-//     for( var i = 0; i < str.length; i++){
-//         if(str[i] == "("){
-//             count++;
-//         }
-//         else if (str[i] == ")"){
-//             count--;
-//         }
+function parensValid(str) {
+    var count = 0;
+    for( var i = 0; i < str.length; i++){
+        if(str[i] == "("){
+            count++;
+        }
+        else if (str[i] == ")"){
+            count--;
+        }
 
-//         if(count < 0){
-//             return false;
-//         }
-//     }
-//     if(count == 0){
-//         return true;
-//     }
-//     else{
-//         return false;
-//     }
-// }
+        if(count < 0){
+            return false;
+        }
+    }
+    if(count == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
-// var newString = parensValid(str3)
-// console.log(newString);
+var newString = parensValid(str3)
+console.log(newString);
 
 
 /*****************************************************************************/
@@ -167,6 +167,8 @@ var test = parensValid(str1);
 console.log(test);
 
 
+/////////////////////////////////////////////////////////////////////////////////////
+
 
 // Algos 07/09/2021
 
@@ -221,7 +223,7 @@ const expected3 = "e racecar e";
 
 function longestPalindromicSubstring(str) {}
 
-
+////////////////////////////////////////////////////////////////////////////////////
 
 
 // Algos 07/12/2021
@@ -267,7 +269,7 @@ const expected1 = "aaabbcddd";
 function decodeStr(str) {}
 
 
-
+/////////////////////////////////////////////////////////////////////////////////////////
 
 
 // Algos 07/13/2021
@@ -384,4 +386,92 @@ const reverseArr = (arr) => {
 function reverseWordOrder(wordsStr) {
     wordArr = wordsStr.split(' ')
     return reverseArr(wordArr).join(" ")
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+// Algos 07/14/2021
+
+/* 
+  Given a string,
+  return a new string with the duplicates excluded
+*/
+
+const str1 = "abcABC";
+const expected1 = "abcABC";
+
+const str2 = "helloo";
+const expected2 = "helo";
+
+const str3 = "parallel";
+const expected3 = "parle";
+
+function stringDedupe(str) {
+  // var - variable is global when declared in expressions, not functions
+  // let - variable is only in the scope it is declared
+  // const - scope is same as let, but variable cannot be reassigned
+  // SETUP
+let distinctStr = "";
+const seen = {};
+
+  // WORK
+for (let i = 0; i < str.length; i++) {
+    // if str[i] key is in the seen object, then it returns the value === true
+    // if str[i] key is not in the seen object, then it returns undefined === false
+    if (!seen[str[i]]) {
+        distinctStr += str[i];
+        seen[str[i]] = true;
+    }
+}
+
+  // RETURN
+return distinctStr;
+}
+
+/*****************************************************************************/
+
+/* 
+Given a string containing space separated words
+Reverse each word in the string.
+If you need to, use .split to start, then try to do it without.
+*/
+
+const str1 = "hello";
+const expected1 = "olleh";
+
+const str2 = "hello world";
+const expected2 = "olleh dlrow";
+
+const str3 = "abc def ghi";
+const expected3 = "cba fed ihg";
+
+function reverseWords(str) {
+  // SETUP
+const words = str.split(" ");
+let wordsReversed = "";
+
+  // WORK
+  // in will give me the index numbers for an array, the keys for an object
+  // of will give me the actual values
+for (const word in words) {
+    let reversedWord = "";
+
+    for (let i = word.length; i >= 0; i--) {
+        reverseWord += word[i];
+    }
+
+    // add a space in front of the word if its not the first word
+    if (wordsReversed.length > 0) {
+      // when we see an = we are assigning or reassining a variable
+        // reversedWord is going to be overwritten with whatever is on the right side of =
+    
+        reversedWord = " " + reversedWord;
+    }
+
+    wordsReversed += reversedWord;
+}
+
+  // RETURN
+return wordsReversed;
 }
