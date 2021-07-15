@@ -35,7 +35,7 @@ SELECT * FROM users WHERE id = 3; -- Will show the information in the users wher
 
 -- ORDER BY
 -- default order is ascending, we can use DESC to start with the great values
-SELECT * FROM users ORDER BY first_name; -- This would start at A - z
+SELECT * FROM users ORDER BY first_name; -- This would start at A - Z
 SELECT * FROM users ORDER BY first_name DESC; -- This would start at the end of the alphabet Z - A
 
 -- We can combine multiple commands together

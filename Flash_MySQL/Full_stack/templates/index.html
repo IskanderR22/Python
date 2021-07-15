@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack
+    </title>
+</head>
+<body>
+
+    <h1>All Dogs!</h1>
+    <a href="/dogs/new">See all dogs!</a>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Hair_Color</th>
+            <th>Created_at</th>
+            <th>Updated_at</th>
+        </thead>
+        <tbody>
+            {% for dog in all_dogs %} <!-- This is all the data from our object -->
+            <tr>
+                <td>{{dog.id }}</td>
+                <td><a href="/dogs/{{ dog.id }}"></a>{{dog.name }}</a></td>
+                <td>{{dog.age }}</td>
+                <td>{{dog.hair_color }}</td>
+                <td>{{dog.created_at }}</td>
+                <td>{{dog.updated_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
