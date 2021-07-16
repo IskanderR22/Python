@@ -1,6 +1,6 @@
 
 
-from mysqlconnection import connectToMySQL # This line connects to MYSQL
+from flask_app.config.mysqlconnection import connectToMySQL # This line connects to MYSQL
 
 class User:
     def __init__(self, data):
@@ -55,9 +55,17 @@ class User:
 
     @classmethod
     def update(cls, data): # Data allows of to specify WHERE to create, example id
-        pass 
+        query = """
+            UPDATE users SET first_name = %(first_name)s, last_name = %(last_name)s, email = %(email)s,
+            updated_at = NOW() WHERE id = %(id)s;
+        """
+
+        connectToMySQL("users_schema").query_db(query, data) 
 
 
     @classmethod
     def delete(cls,data): # Data allows of to specify WHERE to create, example id
-        pass
+        query = "DELETE FROM users WHERE id = %(id)s"
+
+        connectToMySQL("users_schema").query_db(query, data) 
+

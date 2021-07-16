@@ -67,11 +67,22 @@ class Dog:  # We are creating a dog object here
 
     @classmethod
     def update(cls, data): # Data allows of to specify WHERE to create, example id
-        pass 
+        query = """
+            UPDATE dogs SET name = %(name)s, age = %(age)s, hair_color = %(hair_color)s,
+            updated_at = NOW() WHERE id = %(id)s;
+        """
 
+        connectToMySQL("dogs_schema").query_db(query, data) 
+
+                # FOR UPDATE AND DELETE YOU DON't NEED TO RETURN 
 
     @classmethod
     def delete(cls,data): # Data allows of to specify WHERE to create, example id
-        pass
+        query = "DELETE FROM dogs WHERE id = %(id)s"
+
+        connectToMySQL("dogs_schema").query_db(query, data) 
+
+        
+
 
 
