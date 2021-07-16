@@ -38,19 +38,26 @@ def edit_dog_form(dog_id):
 
 
 # Perform the action of update a single dog
-@app.route("/dogs/update", methods = ["POST"])
-def update_dog():
+@app.route("/dogs/<int: dog_id>/update", methods = ["POST"])
+def update_dog(dog_id):
+    new_dict = {
+        "name": request.form['name'],
+        "age": request.form['age'],
+        "hair_color": request.form['hair_color'],
+        "id": dog_id
+    }
+
     Dog.update(request.form)
 
     return redirect("/")
 
 
 # Perform the action of deleting a single dog
-@app.route("dogs/delete")
-def delete_dog():
-    Dog.delete()
+@app.route("dogs/<int:dog_id>/delete")
+def delete_dog(dog_id):
+    Dog.delete({"id": dog_id})
     return redirect("/")
-
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
